@@ -14,4 +14,4 @@ def ncr(n, r):
 
 for _ in range(int(readl())):
   n, m = map(int, readl().split())
-  print (ncr(n + m, n)%mod)
+  print (ncr(n + m, n)%MOD)
