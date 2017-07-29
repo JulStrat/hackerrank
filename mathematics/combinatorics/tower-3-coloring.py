@@ -1,3 +1,6 @@
+'''
+https://www.hackerrank.com/challenges/tower-3-coloring
+'''
 from sys import stdin
 readl = stdin.readline
 
