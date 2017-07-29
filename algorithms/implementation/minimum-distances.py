@@ -1,19 +1,28 @@
-#!/bin/python3
+'''
+https://www.hackerrank.com/challenges/minimum-distances
+'''
 
-POSINF = float('inf')
+from sys import stdin
+readl = stdin.readline
 
-n = int(input())
-arr = list(map(int, input().split()))
-mind = POSINF
-lposd = [0]*(10**5 + 1)
+POS_INF = float('inf')
 
-for p in range(n):
-  x = arr[p]
-  lp = lposd[x]
-  if lp: 
-    d = p + 1 - lp
-    if d < mind:
-      mind = d
-  lposd[x] = p + 1
+def main():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    mind = POS_INF
+    lposd = [0]*(max(arr) + 1)
+    d = POS_INF
+    for p in range(n):
+        x = arr[p]
+        lp = lposd[x]
+        if lp: 
+            d = p + 1 - lp
+        if d < mind:
+            mind = d
+        lposd[x] = p + 1
+    
+    print(mind if mind < POS_INF else -1)
 
-print (mind if mind < POSINF else -1)
+if __name__ == '__main__':
+    main()    
